@@ -10,6 +10,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:#0a0d12;font-family:'Noto Sans JP',sans-serif;color:#f0f3fa;max-width:480px;margin:0 auto;}
+/* 日本語を単語の途中で折らない（改行は助詞・読点の後ろだけ。印は下のスクリプトで付ける） */
+body{word-break:keep-all;overflow-wrap:anywhere;line-break:strict;}
 .sec{padding:48px 20px;border-bottom:1px solid rgba(255,255,255,0.05);}
 .lbl{font-size:9px;font-weight:700;letter-spacing:3px;color:#baff2e;text-transform:uppercase;margin-bottom:4px;}
 .sech{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;margin-bottom:20px;}
@@ -52,7 +54,7 @@ body{background:#0a0d12;font-family:'Noto Sans JP',sans-serif;color:#f0f3fa;max-
 <div class="hero">
   <div class="hero-tag"><span class="live"></span>スポーツ全般で使える 無料Webアプリ</div>
   <div class="hero-h1">FORM<em>CHECK</em></div>
-  <p class="hero-desc">2つの動画を<strong>左右に並べて同時再生・コマ送り</strong>で見比べる。<br>サッカーに限らず、フォームチェックに。</p>
+  <p class="hero-desc">2つの動画を左右に並べて、<br><strong>同時再生やコマ送り</strong>で見比べる。<br>サッカーに限らず、フォームの確認に。</p>
   <a href="https://satoshiatr-blip.github.io/form-check/" target="_blank" style="text-decoration:none;display:block;">
     <div class="cta-box">
       <div class="cta-box-l">インストール不要・完全無料</div>
@@ -62,7 +64,7 @@ body{background:#0a0d12;font-family:'Noto Sans JP',sans-serif;color:#f0f3fa;max-
   </a>
   <div class="stats">
     <div class="stat"><div class="stat-n">2</div><div class="stat-l">同時比較</div></div>
-    <div class="stat"><div class="stat-n">×0.25</div><div class="stat-l">最小速度</div></div>
+    <div class="stat"><div class="stat-n">1/4</div><div class="stat-l">まで遅くできる</div></div>
     <div class="stat"><div class="stat-n">0円</div><div class="stat-l">完全無料</div></div>
     <div class="stat"><div class="stat-n">不要</div><div class="stat-l">インストール</div></div>
   </div>
@@ -74,22 +76,22 @@ body{background:#0a0d12;font-family:'Noto Sans JP',sans-serif;color:#f0f3fa;max-
   <div class="steps">
     <div class="step">
       <div class="sn">1</div>
-      <div><div class="st">🎥 AとBの動画を選ぶ</div><div class="sd">横向き1画面に並んで表示されます</div></div>
-      <div class="stag">動画を選ぶ</div>
+      <div><div class="st">🎥 2つの動画を選ぶ</div><div class="sd">横向きの画面に左右で並びます</div></div>
+      <div class="stag">選ぶ</div>
     </div>
     <div class="step">
       <div class="sn">2</div>
-      <div><div class="st">📍 開始位置を合わせる</div><div class="sd">比較したい瞬間にマークして揃える</div></div>
-      <div class="stag">開始位置に</div>
+      <div><div class="st">📍 開始位置をそろえる</div><div class="sd">比べたい瞬間に印を付けます</div></div>
+      <div class="stag">そろえる</div>
     </div>
     <div class="step">
       <div class="sn">3</div>
-      <div><div class="st">▶️ 同時再生・コマ送り</div><div class="sd">速度を変えたり1コマずつ確認したり</div></div>
-      <div class="stag">×0.25〜×1</div>
+      <div><div class="st">▶️ 同時再生・コマ送り</div><div class="sd">速さを変えたり1コマずつ見たり</div></div>
+      <div class="stag">見比べる</div>
     </div>
     <div class="step">
       <div class="sn">4</div>
-      <div><div class="st">📤 タイトルを入れて書き出す</div><div class="sd">左右合成した1本の動画として保存</div></div>
+      <div><div class="st">📤 名前を入れて書き出す</div><div class="sd">左右を合わせた1本の動画に</div></div>
       <div class="stag">書き出し</div>
     </div>
   </div>
@@ -101,27 +103,27 @@ body{background:#0a0d12;font-family:'Noto Sans JP',sans-serif;color:#f0f3fa;max-
   <div class="feats">
     <div class="feat">
       <div class="fi">📍</div>
-      <div><div class="ft">開始位置合わせ</div><div class="fd">2本の動画で見たい瞬間の開始位置を揃えられる</div></div>
+      <div><div class="ft">開始位置をそろえる</div><div class="fd">2本の動画の、見比べたい瞬間をそろえられます</div></div>
     </div>
     <div class="feat">
       <div class="fi">⏯️</div>
-      <div><div class="ft">同時再生・個別コマ送り</div><div class="fd">2本まとめて再生も、1本ずつ1コマ送りも自在</div></div>
+      <div><div class="ft">同時再生とコマ送り</div><div class="fd">2本まとめての再生も、1本ずつのコマ送りもできます</div></div>
     </div>
     <div class="feat">
       <div class="fi">🐢</div>
-      <div><div class="ft">速度調整</div><div class="fd">×1・×0.5・×0.25で細かい動きも見やすく</div></div>
+      <div><div class="ft">スロー再生</div><div class="fd">等倍・1/2・1/4の速さで、細かい動きも見やすく</div></div>
     </div>
     <div class="feat">
       <div class="fi">🏷️</div>
-      <div><div class="ft">タイトルを焼き込み</div><div class="fd">Before/Afterなど、各動画にタイトルをつけて書き出せる</div></div>
+      <div><div class="ft">名前を入れて保存</div><div class="fd">「前」「後」など、それぞれの動画に名前を付けて書き出せます</div></div>
     </div>
     <div class="feat">
       <div class="fi">📱</div>
-      <div><div class="ft">横向き1画面レイアウト</div><div class="fd">画面いっぱいに動画を表示、操作もはみ出さない</div></div>
+      <div><div class="ft">横向きで見やすい</div><div class="fd">画面いっぱいに動画を表示。ボタンもはみ出しません</div></div>
     </div>
     <div class="feat">
       <div class="fi">🔒</div>
-      <div><div class="ft">データは端末内のみ</div><div class="fd">動画はサーバーに送らない。選んだ後もこの端末だけで完結</div></div>
+      <div><div class="ft">動画は外に出ない</div><div class="fd">動画はサーバーに送りません。すべてこの端末の中で完結します</div></div>
     </div>
   </div>
 </div>
@@ -145,5 +147,13 @@ body{background:#0a0d12;font-family:'Noto Sans JP',sans-serif;color:#f0f3fa;max-
   </div>
 </div>
 
+<script>
+// 助詞・読点の後ろに改行できる印（ゼロ幅スペース）を入れる。続く文字がひらがなのとき（「できます」の「で」など）と「その」「この」の後ろには入れない
+(function(){
+  var re=/((?:[はがをにでともへや、。」）]|(?<![そこあど])の))(?=[^ぁ-ゟ、。」）！？!?\s])/g;
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;
+  while((n=w.nextNode())){ if(/[぀-鿿]/.test(n.data)) n.data=n.data.replace(re,'$1​'); }
+})();
+</script>
 </body>
 </html>
