@@ -71,6 +71,9 @@ export async function exportSideBySide(
     output.addVideoTrack(video, { frameRate: FPS })
     await output.start()
 
+    for (const vTrack of [vA, vB]) {
+      if (!(await vTrack.canDecode())) throw new Error(`この端末のブラウザでは、この動画の形式（${vTrack.codec === 'hevc' ? 'HEVC（高効率）' : String(vTrack.codec ?? '不明')}）を読み込めません。iOSを最新にするか、iPhoneの「設定」→「カメラ」→「フォーマット」を「互換性優先」にして撮った動画でお試しください`)
+    }
     const sinkA = new CanvasSink(vA, { width: HALF_W, height: OUT_H, fit: 'contain', poolSize: 2 })
     const sinkB = new CanvasSink(vB, { width: HALF_W, height: OUT_H, fit: 'contain', poolSize: 2 })
     const timesA = Array.from({ length: totalFrames }, (_, i) => startA + i / FPS)
